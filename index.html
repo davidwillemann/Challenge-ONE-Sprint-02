@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./images/forcaico.png" type="images/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Jogo da Forca</title>
+</head>
+<body>
+    <header class="header">
+        <img class="logo" src="./images/logo.svg" alt="logo">
+    </header>
+
+    <main class="home" id="home">
+        <div class="home-container">
+            <h1 class="title">DIVIRTA-SE! JOGO DA FORCA</h1>
+    
+            <button class="play-btn" id="playBtn">JOGAR</button>
+            <button class="add-word-btn" id="addWordBtn">NOVAS PALAVRAS</button>
+        </div>
+    </main>
+
+    <section class="game" id="game">
+        <img src="./images/forca.png" alt="forca" class="hangman" id="hangman">
+        <div class="btns">            
+            <button class="giveup" id="giveUp" tabindex="-1">FINALIZAR JOGADA</button>
+        </div>
+        <div class="hearts" id="hearts">
+            <img src="./images/heart.png" alt="heart" class="heart">
+            <img src="./images/heart.png" alt="heart" class="heart">
+            <img src="./images/heart.png" alt="heart" class="heart">
+            <img src="./images/heart.png" alt="heart" class="heart">
+            <img src="./images/heart.png" alt="heart" class="heart">
+            <img src="./images/heart.png" alt="heart" class="heart">
+        </div>
+
+        <div class="board" id="board">
+            <span class="tip" id="tip">ANIMAL</span>
+            <div class="word" id="word">
+                <div class="word-enabled"><p class="letter active">A</p></div>
+                <div class="word-enabled"><p class="letter active">L</p></div>
+                <div class="word-disabled"><p class="letter">U</p></div>
+                <div class="word-enabled"><p class="letter active">R</p></div>
+                <div class="word-enabled"><p class="letter active">A</p></div>
+                <div class="word-enabled"><p class="letter active">A</p></div>
+                <div class="word-enabled"><p class="letter active">A</p></div>
+                <div class="word-enabled"><p class="letter active">A</p></div>
+                <div class="word-enabled"><p class="letter active">A</p></div>
+                <div class="word-enabled"><p class="letter active">A</p></div>
+            </div>
+            <div class="keys" id="keys">
+                <div class="key"><p>B</p></div>
+                <div class="key"><p>J</p></div>
+                <div class="key"><p>O</p></div>
+                <div class="key"><p>Q</p></div>
+                <div class="key"><p>N</p></div>
+                <div class="key"><p>T</p></div>
+                <div class="key"><p>W</p></div>
+                <div class="key"><p>H</p></div>
+            </div>
+            <div class="description">
+                <h6>Use as teclas do teclado para achar as letras da palavra</h6>
+            </div>
+            <div class="mobile-keyboard" id="mobile-keyboard">
+                <div class="first-keys">
+                    <div class="key"><p>Q</p></div>
+                    <div class="key"><p>W</p></div>
+                    <div class="key"><p>E</p></div>
+                    <div class="key"><p>R</p></div>
+                    <div class="key"><p>T</p></div>
+                    <div class="key"><p>Y</p></div>
+                    <div class="key"><p>U</p></div>
+                    <div class="key"><p>I</p></div>
+                    <div class="key"><p>O</p></div>
+                    <div class="key"><p>P</p></div>
+                </div>
+                <div class="second-keys">
+                    <div class="key"><p>A</p></div>
+                    <div class="key"><p>S</p></div>
+                    <div class="key"><p>D</p></div>
+                    <div class="key"><p>F</p></div>
+                    <div class="key"><p>G</p></div>
+                    <div class="key"><p>H</p></div>
+                    <div class="key"><p>J</p></div>
+                    <div class="key"><p>K</p></div>
+                    <div class="key"><p>L</p></div>
+                </div>
+                <div class="third-keys">
+                    <div class="key"><p>Z</p></div>
+                    <div class="key"><p>X</p></div>
+                    <div class="key"><p>C</p></div>
+                    <div class="key"><p>V</p></div>
+                    <div class="key"><p>B</p></div>
+                    <div class="key"><p>N</p></div>
+                    <div class="key"><p>M</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="add-word" id="addWord">
+        <div class="add-word-container">
+            <h1>Adicione sua palavra</h1>
+            <input type="text" class="word-added" id="wordAdded" placeholder="Digite sua palavra" maxlength="10">
+            <h6>Palavra: Maximo de dez letras</h6>
+            <input type="text" class="tip-added" id="tipAdded" placeholder="Dica">
+            <div class="add-word-buttons">
+                <button class="word-save" id="wordSave">Salvar</button>
+                <button class="word-back" id="wordBack">Voltar</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="game-result">
+        <div class="game-lost" id="game-lost">
+            <div class="game-lost-result">
+                <h1>YOU LOSE!!!</h1>
+            </div>
+            <button class="new-game" id="newGameLost" tabindex="-1">JOGAR NOVAMENTE ?</button>
+        </div>
+        <div class="game-win" id="game-win">
+            <div class="game-win-result">
+                <h1>YOU WIN!!!</h1>
+            </div>
+            <button class="new-game" id="newGameWin" tabindex="-1">JOGAR NOVAMENTE ?</button>
+        </div>
+    </section>
+
+    <footer class="footer" id="footer">
+        <h3>Desenvolvido por David Pedro Willemann</h3>
+        <div class="social">
+            <a href="https://github.com/davidwillemann" class="github"><img src="./images/github.svg" alt="github" class="github-images"></a>
+            <a href="https://www.linkedin.com/in/davidwillemann/" class="linkedin"><img src="./images/linkedin.svg" alt="linkedin" class="linkedin-images"></a>
+        </div>
+    </footer>
+        
+    <script src="./script/script.js"></script>
+</body>
+</html>
